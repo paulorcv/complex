@@ -4,7 +4,7 @@ services:
   - docker
 
 before_install:
-  - docker push paulorcv/react-test -f ./client/Dockerfile
+  - docker build paulorcv/react-test -f ./client/Dockerfile
 
 script:
   - docker run -e CI=true paulorcv/react-test npm test
